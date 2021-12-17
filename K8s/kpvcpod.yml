@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kpvdeploy2
+spec:
+  replicas: 1
+  selector:      # tells the controller which pods to watch/belong to
+    matchLabels:
+     app: kpv
+  template:
+    metadata:
+      labels:
+        app: kpv
+    spec:
+      containers:
+      - name: shell
+        image: centos
+        command: ["bin/bash", "-c", "sleep 10000"]
+        volumeMounts:
+        - name: kpd
+          mountPath: "/tmp/persistent"
+      volumes:
+        - name: kpd
+          persistentVolumeClaim:
+            claimName: kebsvolclaim

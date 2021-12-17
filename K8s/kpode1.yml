@@ -1,0 +1,10 @@
+kind: node
+apiVersion: loadbalancer/v1
+metadata:
+  name: kpode1
+spec:
+  containers:
+    - name: kc1
+      image: ubuntu
+      command: ["/bin/bash", "-c", "White ture; do echo Hello-KamalYadav; sleep 10 ; done"]
+  restartPolicy: Never

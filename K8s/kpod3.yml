@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-web2
+  labels:
+    role: myrole1
+spec:
+  containers:
+    - name: web
+      image: nginx
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
+
+    - name: web1
+      image: nginx
+      ports: 
+        - name: web1
+          containerPort: 89
+          protocol: TCP

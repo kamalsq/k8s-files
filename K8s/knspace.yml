@@ -1,0 +1,14 @@
+kind: namespace
+apiVersion: app1/v1
+metadata:
+  name: kamalnamespace
+spec:
+  containers:
+   - name: kc1
+     image: ubuntu
+     command: ["/bin/bash", "-c", "White ture; do echo Hello-KamalYadav; sleep 10 ; done"]
+  restartPolicy: Never
+  Ports: 
+    - name: http
+      portocol: tcp
+      port: 80
